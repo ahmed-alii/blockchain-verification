@@ -3,27 +3,23 @@ var router = express.Router();
 
 // gets admin page
 router.get('/', function(req, res, next) {
+    console.log("----------------------------IN ADMIN ROUTER");
     res.render('admin/admin', { title: 'admin' });
+
 });
 
 // gets add student page
-router.get('/addStudent', function(req, res, next) {
-    res.render('admin/addStudent', { title: 'Add Student' });
+router.get('/profile', function(req, res, next) {
+    console.log("----------------------------IN profile page");
+
+    res.render('admin/profile', { title: 'Add Student' });
 });
 
 //gets add teacher
-router.get('/addTeacher', function(req, res, next) {
-    res.render('admin/addTeacher', { title: 'add Teacehr' });
-});
+router.get('/viewStudentRecord', function(req, res, next) {
+    console.log("----------------------------IN VSR ROUTER");
 
-//manage Courses
-router.get('/manageCourse', function(req, res, next) {
-    res.render('admin/manageCourse', { title: 'manage Courses' });
-});
-
-//manage Registrations
-router.get('/manageRegistration', function(req, res, next) {
-    res.render('admin/manageRegistration', { title: 'manageRegistrations' });
+    res.render('admin/viewStudentRecord', { title: 'add Teacehr' });
 });
 
 

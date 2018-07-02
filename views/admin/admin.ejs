@@ -1,11 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
-</body>
-</html>
+<%include ../partials/header.ejs%>
+
+<div class="row">
+    <%include sideBar.ejs%>
+
+    <div class="col-lg-10 col-md-11 col-sm-9 col-xs-9 bhoechie-tab">
+        <div class="bhoechie-tab-content active">
+            <div class="container-fluid col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-1 col-xs-offset-1">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 id="session">Session</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="startSession">
+                            <form method="POST" action="/startSession" class="form-validation">
+                                <div class="form-group">
+                                    <label for="sessionName">Session name</label>
+                                    <input type="text" name="sessionName" id="sessionName" class="form-control"
+                                           placeholder="Enter Session name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pass">Password</label>
+                                    <input type="password" name="pass" id="pass"
+                                           class="form-control" placeholder="Enter password">
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary pull-right">start session</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="closeSession" hidden>
+                            <form method="POST" action="/closeSession" class="form-validation">
+                                <div class="form-group">
+                                    <label for="pass2">Password</label>
+                                    <input type="password" name="pass" id="pass2"
+                                           class="form-control" placeholder="Enter password">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary pull-right" >close session</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%include ../partials/footer.ejs%>

@@ -7,8 +7,12 @@ router.get('/', function(req, res, next) {
 });
 
 //Students view Grades
-router.get('/viewGrades', function(req, res, next) {
-    res.render('student/viewGrades', { title: 'Student view Grades' });
+router.get('/transcript', function(req, res, next) {
+    res.render('student/transcript', { title: 'Student view Grades' });
+});
+
+router.get('/profile', function(req, res, next) {
+    res.render('student/profile', { title: 'Student view Grades' });
 });
 
 module.exports = router;
