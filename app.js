@@ -6,6 +6,8 @@ let logger = require('morgan');
 let indexRouter = require('./routes/index');
 let adminRouter = require('./routes/admin');
 let studentRouter = require('./routes/student');
+let database = require('mysql');
+
 
 let app = express();
 
@@ -15,11 +17,24 @@ app.set('view engine', 'ejs');
 
 
 // connection////////////
-////
-////
-////
-///
-///
+let connection = database.createConnection({
+    host: "localhost",
+    port: "3306",
+    user: "root",
+    password: ""
+    // database: "transcripts"
+});
+
+connection.connect(function (error) {
+    if (error){
+        console.log(error);
+    }
+    else{
+        console.log("Connected")
+    }
+
+});
+
 ///////////////////
 
 
