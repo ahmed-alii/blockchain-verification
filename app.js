@@ -18,11 +18,11 @@ app.set('view engine', 'ejs');
 
 // connection////////////
 let connection = database.createConnection({
-    host: "localhost",
+    host: "192.169.82.14",
     port: "3306",
-    user: "root",
-    password: ""
-    // database: "transcripts"
+    user: "ahmaliic_webstorm",
+    password: "user_user",
+    database: "ahmaliic_zain"
 });
 
 connection.connect(function (error) {
