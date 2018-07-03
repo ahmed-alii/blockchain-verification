@@ -2,3 +2,15 @@
 
 
 <%include partials/footer.ejs%>
+
+
+
+
+db query:
+let sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
+        connection.query(sql, function (err, result) {
+            if (err) throw err;
+            console.log("Table created");
+        });
+
+INSERT INTO `users` (`id`, `name`, `pass`, `type`) VALUES ('14140052', 'Zain', MD5('14140052'), 'student'), ('001', 'Admin', MD5('admin'), 'admin');
