@@ -2,8 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 //Student Main Page
-router.get('/', function(req, res, next) {
-    res.render('student/student', { title: 'Student' });
+router.get('/:id', function(req, res, next) {
+    console.log(req.user);
+    res.render('student/student', { user: req.user , title: "Student"});
 });
 
 //Students view Grades

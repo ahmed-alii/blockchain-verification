@@ -14,3 +14,27 @@ let sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
         });
 
 INSERT INTO `users` (`id`, `name`, `pass`, `type`) VALUES ('14140052', 'Zain', MD5('14140052'), 'student'), ('001', 'Admin', MD5('admin'), 'admin');
+
+
+
+
+
+let queryString = "INSERT INTO `users` (`id`, `name`, `pass`, `type`) VALUES ('112233', 'ANDY', MD5('112233'), 'student');";
+    connection.connect(function (error) {
+        if (error){
+            console.log(error);
+        }
+        else{
+            console.log("Connected");
+
+            connection.query(queryString, function (err, result) {
+                if (err) throw err;
+
+                connection.end();
+                console.log("\n END CONNECTION");
+
+            });
+
+        }
+
+    });
